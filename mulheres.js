@@ -14,7 +14,7 @@ const porta = 3333 //aqui estou criando a porta
 async function mostraMulheres(request, response){
   try {
       const mulheresVindasDoBancoDeDados = await Mulher.find()
-      response.json(mulheresVindasDoBancoDeDado)
+      response.json(mulheresVindasDoBancoDeDados)
   }catch (erro){
     console.log(erro)
 
@@ -57,7 +57,7 @@ async function corrigeMulher(request, response){
     }
 
   if (request.body.citacao){
-    mulherEncontrada = request.body.citcao
+    mulherEncontrada = request.body.citacao
   }
 
     const mulherAtualizadaNoBancoDeDados = await mulherEncontrada.save()
@@ -66,8 +66,6 @@ async function corrigeMulher(request, response){
   }catch(erro){
     console.log(erro)
   }
-
-  const mulherEncontrada = mulheres.find(encontraMulher)
 
 }
 
